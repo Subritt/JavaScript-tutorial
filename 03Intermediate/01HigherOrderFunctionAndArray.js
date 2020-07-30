@@ -12,13 +12,20 @@ const companies= [
   
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
+/**
+ * fill
+ * fills every index of the given array with the value given
+ * second parameter is to tell the function after which index to start filling
+*/
+console.log(ages.fill('fill', 5));
+
 /** 
  * forEach
 */
 
-//   companies.forEach(company => {
-//       console.log(company.name);
-//   });
+  companies.forEach(company => {
+    //   console.log(company.name);
+  });
 
 /**
  * filter
@@ -108,4 +115,4 @@ const combined = ages
     .sort((a, b) => b - a)
     .reduce((total, age) => total + age, 0);
 
-console.log(combined);
+// console.log(combined);
