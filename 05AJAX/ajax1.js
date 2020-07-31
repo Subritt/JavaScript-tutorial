@@ -19,6 +19,9 @@ function loadText() {
         console.log('READYSTATE: ', xhr.readyState); // onload won't run until readyState -> 4
         if (this.status == 200) {
             // console.log(this.responseText);
+
+            // responseText in innerHTML
+            document.querySelector('#file-text').innerHTML = xhr.responseText;
         }
     }
 
