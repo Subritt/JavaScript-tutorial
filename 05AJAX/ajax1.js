@@ -22,6 +22,8 @@ function loadText() {
 
             // responseText in innerHTML
             document.querySelector('#file-text').innerHTML = xhr.responseText;
+        } else if (this.status == 404) {
+            document.querySelector('#file-text').innerHTML = 'File not found';
         }
     }
 
