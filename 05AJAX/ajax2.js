@@ -1,0 +1,1 @@
+document.body.innerHTML = `<h1>Handle JSON</h1>`;
