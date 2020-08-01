@@ -6,7 +6,19 @@ function loadUser() {
 
     xhr.onload = function() {
         if (this.status == 200) {
-            console.log(this.responseText);
+            const user = JSON.parse(this.responseText);
+            
+            let output = '';
+
+            output += `
+                <ul>
+                    <li>ID: ${user.id}</li>
+                    <li>Name: ${user.name}</li>
+                    <li>Email: ${user.email}</li>
+                </ul>
+            `;
+
+            document.querySelector('#user').innerHTML = output;
         }
     }
 
