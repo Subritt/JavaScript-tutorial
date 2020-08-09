@@ -18,13 +18,13 @@ function getUsers() {
     fetch('users.json')
     .then(res => res.json())
     .then(users => {
-        let output = '<h2>Users</h2>';
+        let output = '<h2 class="mb-4">Users</h2>';
         users.forEach(user => {
             output += `
-                <ul>
-                    <li>ID: ${user.id}</li>
-                    <li>Name: ${user.name}</li>
-                    <li>Emai: ${user.email}</li>
+                <ul class="list- mb-3">
+                    <li class="list-group-item">ID: ${user.id}</li>
+                    <li class="list-group-item">Name: ${user.name}</li>
+                    <li class="list-group-item">Emai: ${user.email}</li>
                 </ul>
             `;
         });
@@ -37,10 +37,10 @@ function getApiData() {
     fetch('http://jsonplaceholder.typicode.com/posts')
     .then(res => res.json())
     .then(data => {
-        let output = '<h2>Posts</h2>';
+        let output = '<h2 class="mb-4">Posts</h2>';
         data.forEach(result => {
             output += `
-                <div class="posts">
+                <div class="card card-body mb-3">
                     <h3>${result.title}</h3>
                     <p>${result.body}</p>
                 </div>
@@ -56,8 +56,9 @@ function addPost(e) {
 
     const title = document.querySelector('#title').value;
     const body = document.querySelector('#body').value;
+    console.log(title, body);
 
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('http://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -67,6 +68,6 @@ function addPost(e) {
             body: JSON.stringify({title: title, body: body})
         }
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
+    .then(res => console.log(res.json()))
+    // .then(data => console.log(data))
 }
