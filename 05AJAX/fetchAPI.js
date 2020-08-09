@@ -56,7 +56,6 @@ function addPost(e) {
 
     const title = document.querySelector('#title').value;
     const body = document.querySelector('#body').value;
-    console.log(title, body);
 
     fetch('http://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
@@ -64,10 +63,8 @@ function addPost(e) {
             'Accept': 'application/json, text/plain, */*',
             'Content-type': 'application/json'
         },
-        body: {
-            body: JSON.stringify({title: title, body: body})
-        }
+        body: JSON.stringify({title: title, body: body})
     })
-    .then(res => console.log(res.json()))
-    // .then(data => console.log(data))
+    .then(res => res.json())
+    .then(data => console.log(data))
 }
