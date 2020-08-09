@@ -2,6 +2,7 @@
 document.querySelector('#get-text').addEventListener('click', getText);
 document.querySelector('#get-users').addEventListener('click', getUsers);
 document.querySelector('#get-api-data').addEventListener('click', getApiData);
+document.querySelector('#add-post').addEventListener('submit', addPost);
 
 // Get Text
 function getText(){
@@ -47,4 +48,25 @@ function getApiData() {
         });
         document.querySelector('.output').innerHTML = output;
     })
+}
+
+// Add Post
+function addPost(e) {
+    e.preventDefault();
+
+    const title = document.querySelector('#title').value;
+    const body = document.querySelector('#body').value;
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json'
+        },
+        body: {
+            body: JSON.stringify({title: title, body: body})
+        }
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
 }
