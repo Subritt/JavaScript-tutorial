@@ -8,8 +8,9 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: lightskyblue
-		url('https://i.pinimg.com/originals/3c/24/46/3c24462450c2a902bf7e18f3d9aada81.jpg');
+    background: black
+        url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.androidguys.com%2Fwp-content%2Fuploads%2F2015%2F02%2Falmostblack.jpg&f=1&nofb=1');
+		/* url('https://i.pinimg.com/originals/3c/24/46/3c24462450c2a902bf7e18f3d9aada81.jpg'); */
 	color: #fff;
 	/* Push to bottom */
 	display: flex;
@@ -25,6 +26,7 @@ body {
 }
 
 header {
+    color: yellowgreen;
 	flex: 1;
 	height: 100%;
 	display: flex;
